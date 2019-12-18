@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title> Minna K-T </title>
+    <link href="./happysadsleepymad.css" rel="stylesheet" type="text/css">
+  </head>
+    <body>
+
+      <div class = "wrapper">
+            <div class = "confetti"> </div>
+
+            <div class = "container">
+                <div class = "header">
+                    <div class = "name">
+                        <a href="./index.html">MINNA KIMURA-THOLLANDER</a>
+                    
+                    </div>
+                </div>
+
+                <div class = "content">
+                    <div class="intro">
+                        <div class = "title-big">HappySadSleepyMad 😊😢😴😤</div> 
+                        <div class = "date"> May 2019 | Data Analysis and Data Viz</div> 
+                        <div class = "summary"> 
+                            if you've been on my page for a little while you might have noticed that 
+                            I really like emojis. Emojis are a modern construct of communication that 
+                            transcends languages, as they are used all over the world.
+                        </div>
+                        <div class = "summary"> 
+                            HappySadSleepyMad was a semester-long project for Brown's "Data Science" course.
+                            Our goal was not to merely compare the meaning of emojis across different 
+                            languages— because let's face it, 😀 probably means the same thing around the 
+                            world— but to detect the nuances in emoji usage.
+                        </div>
+
+                        <div class = "summary">
+                            Our team consisted of 4 people, each of us representing one emoji in the project name!
+                                <ul>
+                                    <li> Katherine Sang — 😊 </li>
+                                    <li> Iris (YunYun) Yao — 😢</li>
+                                    <li> Maggie Wu — 😴</li>
+                                    <li> Me — 😤</li> 
+                                </ul>
+                        </div>
+                    </div>
+
+
+                    <div class = "paragraph">
+                        <div class = "title">Data Collection</div> 
+                        <div class = "summary">
+                            Data collection was probably the most important part of the project, because it forms
+                            the foundation for everything that follows. Though we originally were planning on scraping
+                            from multiple places such as Facebook, Instagram, and Twitter we quickly learned that
+                            Facebook had strict restrictions on their data policy so that rules Facebook and Instagram out.
+                        </div>
+                        <div class = "summary">
+                            In the end, we settled for Twitter, which, by the way, also required us to request an API key,
+                            and we failed to receive a response for the entire semester. We ended up acquiring an API key through
+                            some less-than-scrupulous methods... but we had good intentions!
+                        </div>
+                        <div class = "summary">
+                            We scraped Twitter tweets containing emojis for one month from March to April, collecting nearly 300,000 tweets 
+                            during that time. Note that we excluded all of the flag emojis, because they didn't seem to be giving any 
+                            informative data. We then inserted our data into a SQLite DB, and it looked a little like this:
+                        </div>
+                        <img src = "./images/happysadsleepymad/database.PNG" width="800px">
+                        <div class = "summary">
+                            As you can see, we collected information such as username, region, sentiment, and iteraction 
+                            counts. You can also see that the data is not exactly clean because not every Twitter uses 
+                            geo-tagging so... we also had to deal with that. 😅
+                        </div>
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title"> Sentiment Analysis</div> 
+                        <div class = "summary">
+                           Working with only English-language tweets, we used TextBlob (a sentiment analysis library)
+                           and K-Means with 3 clusters to attempt to determine which emojis are positive, negative,
+                           or neutral.
+                        </div>
+                        <div class = "split-box">
+                            <img src="./images/happysadsleepymad/kmeans.png" width="520">
+                            <div class = "summary-box">
+                                 <div class = "summary">
+                                    Positive: <br/>
+                                    👩🔥😍💙🙏💖👍💛💜😊💗👀😎💚💪👉 
+                                    👏🎉🙌😘💰💞🎶🚀🌈💥👌😁🚨🎁😉💻🖤
+                                    👑🎤👊🌟🤗💃⭐🍳🎨⚡🌱🌎🌻😀🌞😃
+                                 </div>
+                                 <div class= "summary">
+                                     Negative: <br/>
+                                     😂😭🤣🤔😩🤷🤠😔😈💀😢😤🤦📍😡🙄
+                                 </div>
+                                 <div class = "summary">
+                                    Neutral: <br/>
+                                    👨✨💕💋🌸💓💦👧👇👦💔😳🌊🌹💘🎓🐰🏃😋😆
+                                    💫💨😜😱🙋😅🏫😌🐶🌲😏🌷🚶🌳🌾
+                                 </div>
+                            </div>
+                        </div>
+                        <div class = "summary">
+                            It's interesting that 😂 and 🤣 are considered negative emojis! Perhaps they're used
+                            in a lot of sarcastic contexts.
+                         </div>
+
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title"> Context Analysis</div> 
+                        <div class = "summary">
+                           We performed case studies on English, Japanese, and Spanish. These were the languages that
+                           we had the most tweet data for.
+                        </div>
+                        <div class = "summary">
+                            Basically, we constructed sparse word vectors to discovered the words that were used in a similar
+                            context to each emoji in 😊😢😴😤, and created a radial graph where the distance represents
+                            the similarities of contexts.
+                         </div>
+                         <div class = "image-grid">
+                             <div class="box1"> <p>Happy</p> </div>
+                             <div class="box2"> <p>Sad</p> </div>
+                             <div class="box3"> <p>Sleepy</p> </div>
+                             <div class="box4"> <p>Mad</p> </div>
+                         </div>
+                         <div class = "summary">
+                            Note that <span style="color: #f27a7d; font-family:'Europa-Bold'">RED</span > = English, 
+                                <span style="color:#fec83e; font-family:'Europa-Bold'" >YELLOW</span> = Spanish, and
+                            <span style="color: #1fbbee; font-family:'Europa-Bold'">BLUE</span> = Japanese.
+                         </div>
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Poster</div> 
+                        <div class="summary">
+                            All of this culminated into a final poster, shown below:
+                        </div>
+
+                        <img src = "./images/happysadsleepymad/hpsm.PNG" width="800px">
+                        <div class = "summary">
+                            You can also read about our project <a target="_blank" href="https://medium.com/@happysadsleepymad/final-blog-post-f92f24c3d6c5"> here</a>.
+                            <br/> <br/>
+                            Side note — our poster received the "Best Visualization" award out of 40 groups! 
+                        </div>
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Reflection</div> 
+                        <div class = "summary">
+                            This was one of my first long-term project based classes at Brown, and it was a really 
+                            rewarding experience! It was perfect intersection between data and design and if I could
+                            I would do it all over again. 
+                        </div>
+                        <div class="summary">
+                            Had we had more time, we would have liked to create a Deep Learning model that could 
+                            predict the emojis from the text of a tweet. We did attempt this with KNN, SVM, &
+                            DecisionTree, but the models had at most an accuracy of 3 percent— pretty terrible. 
+                            Deep Learning is in itself a different field, but it would be fun to see where this 
+                            could take us!
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+ 
+  </body>
+</html>

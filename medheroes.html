@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title> Minna K-T </title>
+    <link href="./medheroes.css" rel="stylesheet" type="text/css">
+  </head>
+    <body>
+
+      <div class = "wrapper">
+            <div class = "confetti"> </div>
+
+            <div class = "container">
+                <div class = "header">
+                    <div class = "name">
+                        <a href="./index.html">MINNA KIMURA-THOLLANDER</a>                    
+                    </div>
+                </div>
+
+                <div class = "content">
+                    <div class="intro">
+                        <div class="title-box"> 
+                            <div class = "title-big">MedHeroes</div> 
+                            <img src="./images/medheroes/Pill.png" height="15">
+                        </div>
+                        <div class = "date"> May 2019 | Web Dev</div> 
+                        <div class = "summary"> 
+                            MedHeroes is an application I built with a team in Spring 2019 as part of Brown's course 
+                            "Modern Web Applications."
+                        </div>
+                        
+                        <div class = "client">
+                            <img src = "./images/grumbach.jpg" height="150px">
+                            <div class = summary>
+                                Meet our client, Dr. Nicholas Grumbach! <br/>
+                                Dr. Grumbach is a pediatrician who sees 
+                                patients at the Medicine-Pediatrics Primary Care Center as a member of the Brown faculty. 
+                                He came to us looking for an application that would encourage compliance among children—
+                                that is, he wanted to find a way to encourage children with long-term medical conditions 
+                                (such as asthma) to take their prescribed medication.
+                            </div>
+                        </div>
+
+                        <div class = "summary">
+                            The team consisted of:
+                                <ul>
+                                    <li> Me (Brown) — full-stack developer, illustrator </li>
+                                    <li> Catherline Li (Brown) — front-end developer</li>
+                                    <li> Shani Abass (RISD) — illustrator</li>
+                                </ul>
+                        </div>
+                    </div>
+                    
+                
+
+                    <div class = "paragraph">
+                        <div class = "title">Initial Resources</div> 
+                        <div class = "summary">
+                            Dr. Grumbach had actually worked on this idea beforehand, so he came to us with a couple
+                            of screens, which I share below:
+                        </div>
+                        <div class = "screenshots">
+                            <img src="./images/screen1.PNG" width = "250">
+                            <img src="./images/screen2.PNG" width = "250">
+                            <img src="./images/screen3.PNG" width = "250">
+                        </div>
+
+                        <div class = "summary">
+                           Our team agreed with the first and second screens in that we needed to keep a list of the user's medications,
+                           and also keep track of their reward. However, we strongly disagreed with the third screen that
+                           displays a ranking of who was most "compliant." We didn't believe that health should become a 
+                           competition. When we communicated this to Dr. Grumbach, he agreed that
+                           the feature would not be necessary.
+                        </div>
+
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Research</div> 
+                        <div class = "summary">
+                            Before designing our application, we conducted user research to gain insight 
+                            into how this app would be used. We interviewed 2 parents with children and 3 
+                            pediatricians living locally in Rhode Island. The interviews occurred over
+                            the phone and were semi-structured, each lasting about 25 minutes.
+                        </div>
+                        <div class = "summary">
+                            From our interviews, we gained the following information:
+                        </div>
+                        <ul>
+                            <li>
+                                It was often hard for parents to deal with children who didn't like taking their
+                                medication.
+                            </li>
+                            <li>
+                                Children are hard to motivate when they don't understand the long-term benefit
+                                of their actions.
+                            </li>
+                            <li>
+                                Many of Dr. Grumbach's patients come from low-income family and use their phones
+                                as their computers.
+                            </li>
+                            <li>
+                                Many parents often didn't understand the medical instructions they were given
+                                by the doctor.
+                            </li>
+                        </ul>
+                        <div class = "summary">
+                            We then constructed a list of necessary specifications for our application:
+                        </div>
+                        <ul>
+                            <li>
+                                There needs to be a rewards system to motivate the children.
+                            </li>
+                            <li>
+                                Every user needs to have their own account so that they can look at their
+                                personal medication. This information needs to be handled carefully because
+                                medical information is sensitive.
+                            </li>
+                            <li>
+                                The app should be optimized for mobile use.
+                            </li>
+                            <li>
+                                It should be easy to use for children, parents, & doctors who all interact with
+                                the app in some way.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Sketches</div> 
+                        <div class = "summary">
+                            After we laid out the plans for the functionality of our app, it was time to start sketching!
+                        </div>
+                        <div class = "summary">
+                            We defined 5 screens— Dashboard, Profile, Calendar, History, and Rewards.
+                        </div>
+
+                        <div class="screenshots">
+                            <div class = "image-box">
+                                <img src="./images/sketch1.PNG" height = "300">
+                                Dashboard
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/sketch2.PNG" height = "300">
+                                Profile
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/sketch3.PNG" height = "300">
+                                Concept Art
+                            </div>
+                        </div>
+
+                        <div class="screenshots">
+                            <div class = "image-box">
+                                <img src="./images/sketch4.PNG" height = "300">
+                                Calendar
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/sketch5.PNG" height = "300">
+                                History
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/sketch6.PNG" height = "300">
+                                Rewards
+                            </div>
+                        </div>
+
+                        <div class = "summary">
+                            Side bar, but the concept art one always makes me laugh. 
+                        </div>
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Wireframes</div> 
+                        <div class="screenshots">
+                            <div class = "image-box">
+                                <img src="./images/demo2.PNG" height = "300">
+                                Login
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/demo1.PNG" height = "300">
+                                Dashboard
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/demo3.PNG" height = "300">
+                                Profile
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/demo4.PNG" height = "300">
+                                Rewards
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Preparing Assets</div> 
+                        <div class = "summary">
+                            This was the fun part! I got to illustrate the 10 avatars that users could pick from.
+                        </div>
+                        <div class = "summary">
+                            We decided to go with superhero animals, as lots of kids these days like TV shows like
+                            Paw Patrol.
+                        </div>
+
+                        <div class="screenshots">
+                            <div class = "image-box">
+                                <img src="./images/medheroes/avatars/bunny.png" height = "150">
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/medheroes/avatars/cat.png" height = "150">
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/medheroes/avatars/dinosaur.png" height = "150">
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/medheroes/avatars/dog.png" height = "150">
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/medheroes/avatars/frog.png" height = "150">
+                            </div>
+                        </div>
+                        <div class="screenshots">
+                            <div class = "image-box">
+                                <img src="./images/medheroes/avatars/monkey.png" height = "150">
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/medheroes/avatars/panda.png" height = "150">
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/medheroes/avatars/penguin.png" height = "150">
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/medheroes/avatars/raccoon.png" height = "150">
+                            </div>
+                            <div class = "image-box">
+                                <img src="./images/medheroes/avatars/unicorn.png" height = "150">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Development</div> 
+                        <div class = "summary">
+                            Finally, once we had everything prepared, we could code the final product!
+                        </div>
+                        <div class = "summary">
+                            Here are some screenshots showing the developed product
+                        </div>
+                    </div>
+
+
+                    <div class = "paragraph">
+                        <div class = "title">Conclusion & Future Work</div> 
+                        <div class = "summary">
+                            This project was bigger than we all expected it to be, especially because 
+                            of the complicated logic in keeping track of the days that users have to 
+                            take medication, how many days they have completed, and what medications they
+                            have already fulfilled for the day. Because we were also in a rush for the
+                            final deadline, it resulted in not exactly the cleanest
+                            code, so I would like go back one day and fix it up!
+                        </div>
+                        <div class = "summary">
+                            Though this was not built for a user interface design course, I particularly
+                            realized the important of UI. A couple days before the due date I was incredibly
+                            unsatisfied with our app, although it was completely functional. Catherine, our
+                            team designer, spent the night beautifying the website and voila! I loved it
+                            instantly. 
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+ 
+  </body>
+</html>

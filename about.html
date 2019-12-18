@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title> Minna K-T </title>
+    <link href="./about.css" rel="stylesheet" type="text/css">
+  </head>
+    <body>
+
+
+
+      <div class = "wrapper">
+        <div class = "confetti"> </div>
+      <div class = "container">
+          <div class = "header">
+              <div class = "name">
+                MINNA KIMURA-THOLLANDER
+              </div>
+              <div class = "page-container">
+                <div class = "work">
+                  <a href="./index.html">WORK</a>
+                </div>
+                <div class ="about">
+                  ABOUT
+                </div>
+              </div>
+          </div>
+
+
+          <div class = "self-intro">
+              <div class = "photo">
+                <img src = "./images/me.jpg" width="250" height="250" alt="its me">
+              </div>
+
+              <div class = "summary">
+                <div class = "title">
+                  <div class = "developer">Developer</div> <span style="color: #F6663F;"> / </span> <div class = "designer">Designer </div>
+                  <span style="color: #FFCD43;"> / </span> <div class = "illustrator">Illustrator</div>
+                </div>
+                <div class = "content">
+                   <div class = "custom">Hi, I'm Minna! 😀 </div>
+
+                   <div class = "list-start">Some things for you to get to know me:</div>
+
+                  <ul>
+                    <li> I spend most of the year in Providence, Rhode Island, but I’m originally from   NYC, and Minnesota before that. </li>
+                    <li>  I have a black cat named Mao. See some photos here.</li>
+                    <li> My favorite emojis are  🎉🐛🐱‍🚀</li>
+                    <li> I can make an origami crane, but I can't figure out how to fold a paper airplane.</li>
+                  </ul>
+                  
+                   <div class="contact">
+                    You can contact me at <br>
+                    minna_kimura-thollander [at] brown [dot] edu.
+                  </div>
+
+                </div>
+
+
+              </div>
+
+          </div>
+
+        </div>
+
+        <div class = "illust">
+          <img src="./images/yellowpaper.svg"  height="400" alt="yellow paper airplane"> 
+        </div>
+    </div>
+    <script>
+
+                // setTimeout(createConfetti, 200);
+
+                // function createConfetti(){
+                //   for (var i = 0; i < 250; i++) {
+                //     create(i);
+                // }
+                // }
+
+
+                // function create(i) {
+                //     var width = Math.random() * 8;
+                //     var height = width * 0.4;
+                //     var colourIdx = Math.ceil(Math.random() * 3);
+                //     var colour = "red";
+                //     switch(colourIdx) {
+                //         case 1:
+                //         colour = "yellow";
+                //         break;
+                //         case 2:
+                //         colour = "blue";
+                //         break;
+                //         default:
+                //         colour = "red";
+                //     }
+                //     $('<div class="fall-'+i+' '+colour+'"></div>').css({
+                //         "width" : width+"px",
+                //         "height" : height+"px",
+                //         "top" : -Math.random()*20+"%",
+                //         "left" : Math.random()*85+"%",
+                //         "opacity" : Math.random()+0.5,
+                //         "transform" : "rotate("+Math.random()*360+"deg)"
+                //     }).appendTo('.wrapper');  
+                    
+                //     drop(i);
+                // }
+
+                // function drop(x) {
+                //     $('.fall-'+x).animate({
+                //       top: "100%",
+                //         left: "+="+Math.random()*15+"%"
+                //     }, 
+                //     Math.random()*3000 + 3000, function() {
+                //         reset(x);
+                //     });
+                // }
+
+                // function reset(x) {
+                //     $('.confetti-'+x).animate({
+                //         "top" : -Math.random()*20+"%",
+                //         "left" : "-="+Math.random()*15+"%"
+                //     }, remove(x));
+                // }
+
+                // function remove(x){
+                //   for (var i = 0; i < 250; i++) {
+                //     $('.fall-'+x).remove()
+                //  }
+                // }
+    </script>
+  </body>
+</html>

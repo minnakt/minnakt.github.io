@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title> Minna K-T </title>
+    <link href="./filter.css" rel="stylesheet" type="text/css">
+  </head>
+    <body>
+
+      <div class = "wrapper">
+            <div class = "confetti"> </div>
+
+            <div class = "container">
+                <div class = "header">
+                    <div class = "name">
+                        <a href="./index.html">MINNA KIMURA-THOLLANDER</a>
+                    </div>
+                </div>
+
+                <div class = "content">
+                    <div class="intro">
+                        <div class="title-box"> 
+                            <div class = "title-big">MoriDB</div> 
+                            <img src="./images/moridb/leaf.png" height="40">
+                        </div>
+                       
+                        <div class = "date"> December 2019 | UI/UX</div> 
+                        <div class = "summary"> 
+                            With so much content and information available on modern websites, 
+                            live filtering has become a powerful feature to help users immediately 
+                            find what they seek. A good filtering system combined with a good UI can 
+                            improve user experience not only by allowing users to avoid the frustration of clutter, 
+                            but by giving them a way to seamlessly navigate your website.
+                        </div>
+                        <div class = "summary">
+                            As an exploration of filtering systems, I built a database of Animal Crossing characters (those
+                            cute little Nintendo animals) that supports live filtering and sorting.
+                            I wanted to help Animal Crossing fans find and save their favorite
+                            characters!
+                        </div>
+                    </div>
+                    
+                    <div class = "tom-nook">
+                        <img src="./images/moridb/tom_nook.png" height="250" alt="tom nook throwing sum confetti">
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Data Collection</div> 
+                        <div class = "summary">
+                            I used Python's <span class="bold">BeautifulSoup</span> to web scrape for Animal Crossing villager data,
+                            which included animal type, gender, personality, birthday, and catchphrase.
+                        </div>
+                        <div class = "summary"> 
+                            I couldn't find all of the information that I wanted to collect on a single website, so I ended up 
+                            having to scrape and synthesize data from 4 different sources. Fortunately, now anyone who
+                            wants to use my application will have the convenience of being able to view villager data
+                            in one place.
+                        </div>
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">The Application</div> 
+                        <div class = "summary">
+                            I stuck to a minimalistic design with ample whitespace, since there are already
+                            a lot of elements (over 100 villagers!) on the screen.
+                            Using a grid, each villager is displayed as a uniform card such that the information 
+                            is easy to parse.
+                        </div>
+                        <img src = "./images/moridb/acdb.PNG" alt="unfiltered" width = "800px">
+                        <div class = "summary">
+                            If you choose to filter on a "Peppy" personality, you'll get the following:
+                        </div>
+                        <img src = "./images/moridb/peppy.PNG" alt="filtered by Peppy" width = "800px">
+                    </div>
+
+                    <div class = "paragraph">
+                        
+                        <div class = "split-box">
+                            <img src="./images/moridb/filterbox.PNG" height="450px">
+                            <div class = "summary-box">
+                                <div class = "title">Usability Design Principles</div> 
+
+                                <div class = "summary">
+                                    My main focus for this project was the sidebar containing the filtering options.
+                                    I wanted to make sure it could streamline user experience, and be intuitive enough
+                                    to not require any further explanation.
+                                </div>
+                                <div class = "summary">
+                                    For the sidebar, I labeled the categories  with underlined, bold green text 
+                                    and used subtle grey horizontal lines to indicate separate functionality.
+                                </div>
+                                <div class = "summary"> 
+                                    Additionally, I made sure that the sidebar was sticky and would 
+                                    follow the user as they scrolled. It would probably be very annoying for a 
+                                    user to have to constantly scroll all the way up to change the 
+                                    fields that they filtered and sorted on. Ensuring that this functionality 
+                                    is available wherever the user is on the page makes for a much less 
+                                    frustrating experience!
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Conclusion & Future Work</div> 
+                        <div class = "summary">
+                            I loved working on this project, and it was a pleasant intersection between my affinity for 
+                            cute video games and web apps! There are a couple things I could polish however, before I 
+                            consider this a finished work.
+                        </div>
+                        <div class = "summary">
+                            Currently, my application doesn't allow you to filter for multiple things on a single field.
+                            So for example, say you want to filter for both the "Peppy" and "Jock" personalities. This
+                            cannot be done— you can only filter for one at a time. If I wanted to implement this I'd 
+                            probably have to change the dropdowns, since dropdowns imply a single choice! 
+                        </div>
+                        <div class = "summary">
+                            Additionally, my application relies on third party image links. This is quite bad especially
+                            if those websites go poof. 💥
+                            I would need to download the image files using a Python script, then host them somewhere (either
+                            on my server or on a database like MongoDB).
+                        </div>
+                        <div class = "summary">
+                            Overall, this was a really fun project to work on, and I'm excited by the ways I can improve it! 😀
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+  </body>
+</html>
