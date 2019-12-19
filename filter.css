@@ -25,7 +25,7 @@ body {
     min-height: 100% ;
     background: none;
     min-width: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 80px;
   }
   
   html {
@@ -47,7 +47,7 @@ body {
     top:0; */
     position: absolute;
     top:0;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
 
     -moz-animation: fadein 1.2s; /* Firefox */
     -webkit-animation: fadein 1.2s; /* Safari and Chrome */
@@ -192,6 +192,33 @@ body {
     width: 450px;
   }
 
+  ul {
+    width: 90%;
+  }
+
+  .design1 {
+    font-family: "Europa-Bold";
+    font-size: 16px;
+    color:#00ad37;
+    display: inline-block;
+  }
+
+  /* .design1::after {
+    content: "";
+    position: relative;
+    bottom: 2px;
+    width: 100%;
+    display: block;
+    height: 3px;
+    background: #00ad37;
+    z-index: 0;
+  } */
+
+  .analysis-box {
+    margin-left: 40px;
+    padding: 20px;
+  }
+
   li{
     font-family: 'Europa';
     list-style-position: outside;
@@ -202,6 +229,10 @@ body {
 
   .tom-nook {
     margin: 10px auto;
+    text-align: center;
+    font-family: "Europa";
+    font-size: 13px;
+    color: #888;
   }
 
   .tom-nook img {
@@ -244,7 +275,7 @@ body {
 .back2top{
   font-family:'Europa';
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 70px;
   font-size: 13px;
 }
 

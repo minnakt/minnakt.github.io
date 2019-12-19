@@ -47,23 +47,23 @@
                             The goal of this project was to help Animal Crossing fans like me find and save their favorite
                             characters!
                         </div>
-                        <div class = "summary">
-                            Let's get started!
-                        </div>
                     </div>
                     
                     <div class = "tom-nook">
                         <img src="./images/moridb/tom_nook.png" height="250" alt="tom nook throwing sum confetti">
+                        <div class="caption"> Let's get started :] </div>
                     </div>
 
                     <div class = "paragraph">
                         <div class = "title">Data Collection</div> 
                         <div class = "summary">
-                            Before anything, I had to get my data. I used Python's <span class="bold">BeautifulSoup</span> library to web scrape for Animal Crossing villager data,
+                            Before anything, I had to collect my data.
+                            I used Python's <span class="bold">BeautifulSoup</span> library to web scrape for Animal Crossing villager data,
                             which included animal type, gender, personality, birthday, and catchphrase.
                         </div>
                         <div class = "summary"> 
-                            I couldn't find all of the information that I wanted to collect on a single website, so I ended up 
+                            I couldn't find all of the information about villagers that I wanted to collect on a single website, 
+                            so I actually ended up 
                             having to scrape and synthesize data from 4 different sources. Fortunately, now anyone who
                             wants to use my application will have the convenience of being able to view villager data
                             in one place! 😁
@@ -73,45 +73,68 @@
 
 
                     <div class = "paragraph">
-                        <div class = "title"> Card Design</div> 
+                        <div class = "title"> Card Prototyping</div> 
                         <div class = "summary">
-                            It was important for me to be able to communicate the information associated to each
+                            It was important for me to be able to communicate the information associated with each
                             villager in a concise, clean way. The information I had to display on the villager cards 
                             included 6 fields— image, name, gender, catchphrase, personality, and birthday.
-                            How could I best display this information such that it would be easy for a user to parse?
+                            The question was, how could I best display this information such that it would be easy for a user to parse?
                         </div>
                         <div class = "summary">
                             To answer this question, I created 3 different card designs in Figma, and evaluated them.
                             You can see the three designs below:
                         </div>
                         <img src="./images/moridb/experiments.PNG" width="700">
+                        
+                        <br/> <br/>
                         <div class = "summary">
-                            Here's how I evaluated them:
+                            And here are my notes from when I evaluated each of these designs:
+                        </div>
+
+                        <div class="analysis-box">
+
+                        <div class= "summary design1">
+                            DESIGN #1:
                         </div>
                         <ul>
                             <li>
-                                Design #1: Too much contrast between the bold and standard fonts. 
-                                It overlabels, when a defined layout would not 
-                                need any labels in the first place.
+                                Too much contrast between the bold and standard fonts. 
                             </li>
+                            <li>  It over-labels the content. A more defined layout would not 
+                                need any labels in the first place.</li>
+                        </ul>
+                        <div class= "summary design1">
+                            DESIGN #2:
+                        </div>
+                        <ul>
                             <li>
-                                Design #2: It's fine, but too much of the text is consolidated at the 
+                                It's fine, but too much of the text is consolidated at the 
                                 bottom of the card, making it a little uncomfortable to look at.
                             </li>
                             <li>
-                                Design #3: The distribution of the text is much better, but the personality 
+                                No need to label that the animal is a deer— it's evident enough from the picture!
+                            </li>
+                        </ul>
+
+                        <div class= "summary design1">
+                            DESIGN #3:
+                        </div>
+                        <ul>
+                            <li>
+                                The distribution of text is much better, but the personality 
                                 label looks out of place. It would look better with the same personality label 
                                 as design #2.
                             </li>
+                    
                         </ul>
+                    </div>
+
+                        <br/>
                         <div class="summary">
-                            In the end, I found that I liked bits and pieces of designs #2 and #3, so I  
+                            In the end, I found that I liked the overall design of #2 and the text distribution of #3, so I  
                             combined their best elements to design my final card:
                         </div>
                         <img src="./images/moridb/card.PNG" width="200">
-                        <div class="summary">
-                            Pretty snazzy!
-                        </div>
                     </div>
 
                     <div class = "paragraph">
@@ -122,13 +145,14 @@
                                 <div class = "title">Usability Design Principles</div> 
 
                                 <div class = "summary">
-                                    My main focus for this project was the sidebar containing the filtering options.
+                                    Another main focus for this project was the sidebar containing the filtering options.
                                     I wanted to make sure it could streamline user experience, and be intuitive enough
                                     to not require any further explanation.
                                 </div>
                                 <div class = "summary">
-                                    For the sidebar, I labeled the categories  with underlined, bold green text 
-                                    and used subtle grey horizontal lines to indicate separate functionality.
+                                    For the sidebar, I labeled the categories with underlined, bold green text 
+                                    and used subtle grey horizontal lines to indicate separate functionality
+                                    between Filter, Sort, and Favorites.
                                 </div>
                                 <div class = "summary"> 
                                     Additionally, I made sure that the sidebar was sticky and would 
@@ -152,13 +176,14 @@
                             quickly.
                         </div>
                         <div class = "summary">
-                            Here's what the page looks like when you open it.
+                            Here's what the page looks like when you first open it. The villagers are organized 
+                            alphabetically by name by default.
                         </div>
                         <img src = "./images/moridb/acdb.PNG" alt="unfiltered" width = "800px">
                         <div class = "summary">
-                            You can filter on either personality or animal type. You can also 
-                            sort them alphabetically, or by their birthdays. The game actually 
-                            celebrates villager birthdays, so this feature is handy!
+                            You can filter by either personality or animal type. You can also 
+                            sort them alphabetically, or by their birthdays. (The game actually 
+                            celebrates villager birthdays, so this feature is handy!)
                             Lastly, you also have the option of favoriting villagers by clicking 
                             the little heart in the corner of the card.
                         </div>
@@ -180,7 +205,7 @@
                     <div class = "paragraph">
                         <div class = "title">Conclusion & Future Work</div> 
                         <div class = "summary">
-                            I loved working on this project, and it was a pleasant intersection between my affinity for 
+                            I loved working on this project, since it was a pleasant intersection between my affinity for 
                             cute video games and web apps! There are a couple things I could polish however, before I 
                             consider this a finished work.
                         </div>
@@ -188,7 +213,7 @@
                             Currently, my application doesn't allow you to filter for multiple things on a single field.
                             So for example, say you want to filter for both the "Peppy" and "Jock" personalities. This
                             cannot be done— you can only filter one at a time. If I wanted to implement this I'd 
-                             have to change the dropdowns, since dropdowns imply a single choice! 
+                             have to change the dropdowns to a different UI element, since dropdowns imply a single choice! 
                         </div>
                         <div class = "summary">
                             Additionally, it currently relies on third party image links. This is quite bad especially

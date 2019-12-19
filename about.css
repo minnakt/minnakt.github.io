@@ -166,17 +166,14 @@ to {
 
 .custom {margin-bottom: 15px;}
 
-/* .list-start{
-  font-family:'Europa-Bold';
-  margin-bottom: 10px;
-}
-
-.list-item{
-  margin-bottom: 8px;
-} */
-
 .contact {
   margin-top: 30px;
+}
+
+.info {
+  color: #888;
+  font-family: 'Europa';
+  font-size: 12px;
 }
 
 li{

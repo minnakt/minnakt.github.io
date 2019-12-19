@@ -143,7 +143,7 @@
                         </div>
                     </div>
 
-                    <div class = "paragraph">
+                    <div class = "paragraph model">
                         <div class = "title">Model Architecture</div> 
                         <div class = "summary">
                             DeepFont consists of two models: the convolutional autoencoder, and the actual DeepFont model.
@@ -165,20 +165,81 @@
                             "serif vs non-serif" but also abstract things that we as humans don't understand!
                         </div>
                         <div class = "summary">
-                            Here's the architecture of the model, which I illustrated:
+                            Here's the architecture of the model (illustrated by me in Adobe Illustarator):
                         </div>
+                        <img src="./images/wtf/autoencoder/autoencoder.PNG" width="700">
 
                         <div class = "summary">
                             And here are some results of the model:
                         </div>
-
+                        <img src= "./images/wtf/autoencoder/outputs.PNG" width="500">
+                        <div class = "summary">
+                            The results here mean that the autoencoder did pretty well. Because the output looks nearly identical to the 
+                            input, it means the autoencoder was able to pick up the key features of every image exceedingly well.
+                        </div>
 
 
                         <div class="subtitle"> DEEPFONT MODEL
                         </div>
                         <div class = "summary">
                             This is where all the real stuff happens. The DeepFont model imports its first two layers from 
-                            the convolutional autoencoder, 
+                            the convolutional autoencoder (a long with a couple other convolutional layers), followed by 
+                            dense layers that are then softmaxed to give the probability distribution over the 150 fonts 
+                            we selected. Note that unlike the convolutional autoencoder, this is a supervised network, so we 
+                            are giving the model the true labels of the fonts.
+                        </div>
+                        <div class = "summary">
+                            Here's the model architecture:
+                        </div>
+                        <img src="./images/wtf/deepfont/wop.PNG" width="700">
+                        <div class = "summary">
+                            On the first epoch, the accuracy was 89%, which is suspiciously good. It could be because the 
+                            autoencoder just gave us so much useful information that it's doing really well at identifying fonts.
+                        </div>
+                    </div>
+
+                    <div class = "paragraph model">
+                        <div class = "title">Best and Worst Performing Fonts</div> 
+                        <div class = "summary">
+                            The best performing fonts were as follows:
+                        </div>
+                        <img src="./images/wtf/graph1.PNG" width="500">
+                        <div class = "summary">
+                            Something interesting is how these are all fonts with serif.
+                        </div>
+                        <div class = "summary">
+                            The worst performing fonts were as follows:
+                        </div>
+                        <img src="./images/wtf/graph2.PNG" width="500">
+                        <div class = "summary">
+                            Notice how the first two fonts are sans serif, and they actually look quite similar to each other.
+                        </div>
+
+                        <div class = "summary">
+                            We hypothesize that our model performs worse with sans serif fonts because they have less 
+                            distinguishing features than serif fonts.
+                        </div>
+                    </div>
+
+                    <div class = "paragraph model">
+                        <div class = "title">Case Studies</div> 
+                        <div class = "summary">
+                            We also tested how our model did on tests with individual font images. The image below is 
+                            in Leander Script Pro.
+                        </div>
+                        <img src="./images/wtf/cursive.PNG" width="500">
+                        <div class = "summary">
+                            As you can see, the model was able to identify Leander Script Pro (the topmost font). 
+                            The four fonts that follow also have a cursive style, so it's understandable why the model would 
+                            also recommend those fonts as the true font label.
+                        </div>
+                        <div class = "summary">
+                            Here's a case where the model didn't do so well:
+                        </div>
+                        <img src="./images/wtf/ritchie.PNG" width="500">
+                        <div class = "summary">
+                            The fonts that the model recommends here are way off. This case study further confirmed our suspicions 
+                            that the model has trouble recognizing sans serif fonts.
                         </div>
                     </div>
 

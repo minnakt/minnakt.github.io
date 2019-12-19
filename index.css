@@ -182,9 +182,9 @@
       -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-        margin-left: 30px;
-        margin-top: 130px;
-        border-radius: 2px;
+      margin-left: 30px;
+      margin-top: 130px;
+      border-radius: 2px;
   }
 
   .project-name {
