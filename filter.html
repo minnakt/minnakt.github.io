@@ -63,23 +63,72 @@
                             I couldn't find all of the information that I wanted to collect on a single website, so I ended up 
                             having to scrape and synthesize data from 4 different sources. Fortunately, now anyone who
                             wants to use my application will have the convenience of being able to view villager data
-                            in one place.
+                            in one place! 😁
                         </div>
                     </div>
 
                     <div class = "paragraph">
-                        <div class = "title">The Application</div> 
+                        <div class = "title"> Design</div> 
                         <div class = "summary">
-                            I stuck to a minimalistic design with ample whitespace, since there are already
-                            a lot of elements (over 100 villagers!) on the screen.
-                            Using a grid, each villager is displayed as a uniform card such that the information 
-                            is easy to parse.
+                            It was important to me to be able to communicate the information associated to a 
+                            villager in a concise, clean way. The information I had to display on the card 
+                            included 6 fields— image, name, gender, catchphrase, personality, and birthday.
+                            How could I best display this information such that it would be easy for a user to parse?
+                        </div>
+                        <div class = "summary">
+                            To answer this question, I created 3 different card designs in Figma, and evaluated them.
+                            You can see the three designs below:
+                        </div>
+                        <img src="./images/moridb/experiments.PNG" width="700">
+                        <div class = "summary">
+                            The first design had too many bold labels. My philosophy at this point was that "if it 
+                            needs labels, you didn't design it well enough." Therefore, I ruled this card out.
+                        </div>
+                        <div class = "summary">
+                            There were bits and pieces I liked about the second and third design. I liked the grey 
+                            birthday label, and I felt that the second design's personality label was more subtle and 
+                            attractive. I also liked the name above the image more, because I felt too much of the 
+                            text information was already consolidated on the bottom of the card. 
+                        </div>
+                        <div class="summary">
+                            In the end, I  combined the second and third design to get my final card:
+                        </div>
+                        <img src="./images/moridb/card.PNG" width="200">
+                        <div class="summary">
+                            Pretty snazzy.
+                        </div>
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Development</div> 
+                        <div class = "summary">
+                            In organizing my cards, I stuck to a grid layout with with ample whitespace, since 
+                            there were already a lot of elements (over 100 villager card!) on the screen.
+                            I chose a grid because the uniformity of it helps users parse information more 
+                            quickly.
+                        </div>
+                        <div class = "summary">
+                            Here's what the page looks like when you open it.
                         </div>
                         <img src = "./images/moridb/acdb.PNG" alt="unfiltered" width = "800px">
                         <div class = "summary">
-                            If you choose to filter on a "Peppy" personality, you'll get the following:
+                            You can filter on either personality or animal type. You can also 
+                            sort them alphabetically, or by their birthdays. The game actually 
+                            celebrates villager birthdays, so this feature is handy!
+                            Lastly, you also have the option of favoriting villagers by clicking 
+                            the little heart in the corner of the card.
+                        </div>
+                        <div class = "summary">
+                            Ok, let's try it out. Here's what you see if you choose to filter on a "Peppy" personality:
                         </div>
                         <img src = "./images/moridb/peppy.PNG" alt="filtered by Peppy" width = "800px">
+                        <div class = "summary">
+                           Nice, and what if we wanted to sort by birthday on these Peppy villagers?
+                        </div>
+                        <img src = "./images/moridb/sortbday.PNG" alt="sorting by birthday" width = "800px">
+                        <div class = "summary">
+                            This works too!
+                        </div>
                     </div>
 
                     <div class = "paragraph">
@@ -134,8 +183,16 @@
                             Overall, this was a really fun project to work on, and I'm excited by the ways I can improve it! 😀
                         </div>
                     </div>
+
+                    <div class = "back2top">
+                        <a href="#top">Back to top of page</a>
+                    </div>
                 </div>
+
+                
             </div>
+
+            
         </div>
  
   </body>

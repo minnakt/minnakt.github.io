@@ -25,7 +25,7 @@ body {
     min-height: 100% ;
     background: none;
     min-width: 100%;
-    padding-bottom: 100px;
+    padding-bottom: 30px;
   }
   
   html {
@@ -47,7 +47,7 @@ body {
     top:0; */
     position: absolute;
     top:0;
-    padding-bottom: 300px;
+    padding-bottom: 60px;
 
     -moz-animation: fadein 1.2s; /* Firefox */
     -webkit-animation: fadein 1.2s; /* Safari and Chrome */
@@ -171,8 +171,13 @@ body {
   }
 
   img {
-    border: 2px solid #dedede;
     margin-top: 30px;
+  }
+
+  .paragraph img {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .split-box {
@@ -183,7 +188,8 @@ body {
   .split-box .summary-box {
     margin-top: 30px;
     margin-left: 50px;
-
+    flex-shrink: 0;
+    width: 450px;
   }
 
   .tom-nook {
@@ -223,6 +229,33 @@ body {
 .name a:hover {
     color: #F6663F;
     transition: opacity .55s ease-in-out;
+-moz-transition: opacity .55s ease-in-out;
+-webkit-transition: opacity .55s ease-in-out;
+}
+
+.back2top{
+  font-family:'Europa';
+  margin: 0 auto;
+  margin-top: 50px;
+  font-size: 13px;
+}
+
+.back2top a, .back2top a:visited, .back2top a:active {
+  text-decoration: none;
+  color: black;
+  
+
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.back2top a:hover {
+  color: #F6663F;
+  border-bottom: 1px #F6663F dotted;
+  transition: opacity .55s ease-in-out;
 -moz-transition: opacity .55s ease-in-out;
 -webkit-transition: opacity .55s ease-in-out;
 }

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title> Minna K-T </title>
+    <link href="./wtf.css" rel="stylesheet" type="text/css">
+    <link rel="icon" 
+      type="image/png" 
+      href="./images/favicon/favicon.ico" />
+  </head>
+    <body>
+
+      <div class = "wrapper">
+            <div class = "confetti"> </div>
+
+            <div class = "container">
+                <div class = "header">
+                    <div class = "name">
+                        <a href="./index.html">MINNA KIMURA-THOLLANDER</a>
+                    
+                    </div>
+                </div>
+
+                <div class = "content">
+                    <div class="intro">
+                        <div class="title-box"> 
+                            <div class = "title-big">What The Font ❔</div> 
+                        </div>
+                        <div class = "date"> Dec 2019 | Data & ML</div> 
+                        <div class = "summary"> 
+                            Have you ever looked at a font and thought it was so nice but you had no way of identifying it 
+                            besides uploading it onto a (not-very-good) font identification website and receiving completely 
+                            dissimilar fonts? That's where the DeepFont model comes in.
+                        </div>
+                        <div class = "summary"> 
+                            The DeepFont model is based on a <a href="https://arxiv.org/pdf/1507.03196.pdf">paper</a> written in 
+                            2015 by researchers at Adobe and Snapchat. 
+                            Basically, their mission was to figure out a way to 
+                            reliably identify fonts given pictures of font images through a deep learning model.
+                        </div>
+                        <div class = "summary"> 
+                            Given the usefulness of typography in industries like marketing, publishing, public transportation, and 
+                            web development, this model was a revolutionary way to identify fonts!
+                        </div>
+
+                        <div class = "summary">
+                            I worked with a team of 3 people to implement the DeepFont model on a smaller scale. I've written our 
+                            names and our roles below!
+                                <ul>
+                                    <li> Katherine Sang — code, poster</li>
+                                    <li> Maggie Wu — code</li>
+                                    <li> Me — code, illustration</li> 
+                                </ul>
+                        </div>
+                    </div>
+
+
+                    <div class = "paragraph">
+                        <div class = "title">Data</div> 
+                        <div class = "summary">
+                            We used data from the AdobeVFR dataset, a dataset containing font images created by 
+                            the original authors of this paper.
+                        </div>
+                        <div class = "summary">
+                            The data is split into two categories: 
+                            <ul>
+                                <li> Real data - font images of physical things, like newspaper clippings or signs
+                                    <div class = "summary">
+                                        An example of a real font image would be the following:
+                                     </div>
+                                     <img src="./images/wtf/real-ex.png" width="200">
+
+                                </li>
+                                <li> Synthetic - computer-generated font images
+                                    <div class = "summary">
+                                        An example of a synthetic font image would be the following:
+                                     </div>
+                                     <img src="./images/wtf/synthetic.png" width="200">
+                                    
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class = "summary">
+                           What was great about this dataset is that all of the real images came in raw image form (i.e. PNGs). 
+                        </div>
+
+                        <div class = "summary">
+                            What was not so great was that the synthetic images were encoded in a BCF file, because the original 
+                           authors wanted to avoid copyright issues from Adobe. We were lucky enough to be provided with 
+                           the original script that packed the raw images into a BCF file, so we reverse engineered it to 
+                           obtain the good 'ol PNGs.
+                        </div>
+
+
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Preprocessing</div> 
+                        <div class = "summary">
+                            Preprocessing is where you prepare your data to be piped into your model. Our model first required us 
+                            to apply noise, blur, perspective rotation, and shading on the original font image. This is to 
+                            account for "messy" font images present in the real world, and also because designers often manipulate 
+                            fonts by rotating them.
+                        </div>
+                        <div class = "summary">
+                           After these filters were applied, we took ten 96x96 crops for each font image. The data is saved in the 
+                           form of numpy arrays in hdf5 files (a file that can theoretically hold any amount of data).
+                        </div>
+                        <div class = "summary">
+                            So, let's take the following font image:
+                         </div>
+                         <img src="./images/wtf/welcome.png" width="300">
+                         <div class = "summary">
+                            Then an example of the some of the crops that would be generated are:
+                         </div>
+
+                         <img src="./images/wtf/crop0.png" width="100">
+                         <img src="./images/wtf/crop1.png" width="100">
+                         <img src="./images/wtf/crop2.png" width="100">
+                         <div class = "summary">
+                            At this point, the data is ready to be processed!
+                         </div>
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Adjustments</div> 
+                        <div class = "summary">
+                            If we processed the original data used by the authors of this paper, we would need to process 37.5 million images!
+                            Believe me, we tried to do this, and it was not feasible. We would need Brown to buy us a super huge 
+                            computer for $50,000. 
+                        </div>
+                        <div class = "summary">
+                            To compensate for lack of computational resources, we cut down to 150 fonts, meaning we processed 
+                            3 million images. It's not anywhere close to the original numbers, but 3 million is still enough 
+                            data to get some results!
+                        </div>
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Model Architecture</div> 
+                        <div class = "summary">
+                            DeepFont consists of two models: the convolutional autoencoder, and the actual DeepFont model.
+                        </div>
+
+                        <div class="subtitle"> CONVOLUTIONAL AUTOENCODER
+                        </div>
+                        <div class = "summary">
+                            First, to explain a little: a convolutional autoencoder is a type of artificial neural network 
+                            used to learn datain an unsupervised manner. Whatever data you feed into a convolutional autoencoder,
+                            it will discover the "main features" without you telling it directly. For example, a convolutional 
+                            autoencoder could learn that the number 1 is primarily defined by a straight line.
+                        </div>
+                        <div class = "summary">
+                            The reason we needed a convolutional autoencoder is because we had a lot of real data that was unlabeled.
+                            Because we couldn't know anything about the fonts (that is, unless you are a font identifying master), it
+                            made sense to just hand that data over to an autoencoder and have it figure out what important features 
+                            fonts have. Conceptually, you can understand this as the autoencoder learning concrete features such as
+                            "serif vs non-serif" but also abstract things that we as humans don't understand!
+                        </div>
+                        <div class = "summary">
+                            Here's the architecture of the model, which I illustrated:
+                        </div>
+
+                        <div class = "summary">
+                            And here are some results of the model:
+                        </div>
+
+
+
+                        <div class="subtitle"> DEEPFONT MODEL
+                        </div>
+                        <div class = "summary">
+                            This is where all the real stuff happens. The DeepFont model imports its first two layers from 
+                            the convolutional autoencoder, 
+                        </div>
+                    </div>
+
+                    <div class = "paragraph">
+                        <div class = "title">Poster</div> 
+                        <div class = "summary">
+                            Here's our final poster we presented on December 12th.
+                        </div>
+                        <img src="./images/wtf/poster.png" width="800">
+                    </div>
+
+                    
+
+
+                   
+                    <div class = "paragraph">
+                        <div class = "title">Reflection</div> 
+                        <div class = "summary">
+                            At the end of the project, we were able to look at the actual website! I'll just provide a screenshot here if you 
+                            don't feel like navigating to their website:
+                        </div>
+                        <img src="./images/iterative/real.PNG" width="800px">
+                        <div class = "summary">
+                            We were all really surprised at how different it was! During our design we hyper-focused on the coffee aspect,
+                            but you can see in the screenshot above that they didn't really use coffee as their motif. 
+                        </div>
+
+                        <div class = "summary">
+                            We emailed our design to Buy Me a Coffee, expecting no reply, but to our surprise we received one from the CEO,
+                            Jijo Sunny! It was very touching to receive an email back from a startup, because I would think they
+                            are too busy to respond to students.
+                        </div>
+                        <img src="./images/iterative/jijo.PNG" width="650px">
+
+                        <div class = "summary">
+                            Overall, this project was an unique challenge in using our imagination, and a worthwhile exercise in website design! 
+                            Though this design will never become a reality, I felt that this project gave me new experiences in the design process, 
+                            and how refine your projects after receiving feedback.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+ 
+  </body>
+</html>
