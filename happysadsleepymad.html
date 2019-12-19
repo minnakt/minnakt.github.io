@@ -34,7 +34,7 @@
                         <div class = "summary"> 
                             if you've been on my page for a little while you might have noticed that 
                             I really like emojis. Emojis have become a staple of modern conversation that 
-                            transcends languages, as they are used all over the world.
+                            transcends languages, used all over the world.
                         </div>
                         <div class = "summary"> 
                             HappySadSleepyMad was a semester-long project for Brown's "Data Science" course.
@@ -59,8 +59,8 @@
                         <div class = "title">Data Collection</div> 
                         <div class = "summary">
                             Data collection was probably the most important part of the project, because it forms
-                            the foundation for everything that follows. Though we originally were planning on scraping
-                            from multiple places such as Facebook, Instagram, and Twitter, we quickly learned that
+                            the foundation for everything that follows. Though we originally planned to scrape
+                            from multiple sources such as Facebook, Instagram, and Twitter, we quickly learned that
                             Facebook has strict restrictions on their data policy which ruled Facebook and Instagram out.
                         </div>
                         <div class = "summary">
@@ -120,13 +120,23 @@
                     <div class = "paragraph">
                         <div class = "title"> Context Analysis</div> 
                         <div class = "summary">
-                           We performed case studies on English, Japanese, and Spanish. Why those languages? They were simply 
-                           the languages for which we had collected the most tweet data.
+                           Following sentiment analysis, we performed case studies of context analysis on English, Japanese, and Spanish. 
+                           These languages were simply the languages for which we had collected the most tweet data!
                         </div>
+
                         <div class = "summary">
-                            Basically, we constructed sparse word vectors to discover words that were used in a similar
-                            context to each emoji in 😊😢😴😤, and created radial graphs using Javascript's D3 library.
-                            The distance between the words and the emoji in the center represents the similarities of contexts.
+                            To clarify, context analysis is when you find what words are used in similar contexts. Note that this is slightly different 
+                            from synonyms, although synonyms would definitely be used in very similar contexts. For example, if you have the 
+                            sentences "Mary walks to the bedroom" and "John goes to the bathroom," then "Mary" and "John" are words 
+                            used in similar contexts, but they aren't synonyms.
+                         </div>
+ 
+
+                        <div class = "summary">
+                            We used our tweet data to construct sparse word vectors, which we then used to discover words that were 
+                            used in a similar
+                            context for each emoji in 😊😢😴😤. Once we had the most similar words for every emoji, we created radial graphs 
+                            using Javascript's D3 library.
                          </div>
                          <div class = "image-grid">
                              <div class="box1"> <p>Happy</p> </div>
@@ -138,6 +148,7 @@
                             Note that <span style="color: #f27a7d; font-family:'Europa-Bold'">RED</span > = English, 
                                 <span style="color:#fec83e; font-family:'Europa-Bold'" >YELLOW</span> = Spanish, and
                             <span style="color: #1fbbee; font-family:'Europa-Bold'">BLUE</span> = Japanese.
+                            The distance between the words and the emoji in the center represents the cosine similarity of contexts.
                          </div>
                     </div>
 
@@ -151,7 +162,7 @@
                         <div class = "summary">
                             You can also read about our project <a target="_blank" href="https://medium.com/@happysadsleepymad/final-blog-post-f92f24c3d6c5"> here</a>.
                             <br/> <br/>
-                            Side note — our poster received the "Best Visualization" award out of 40 groups! 
+                            Sidenote — our poster received the "Best Visualization" award out of 40 groups! 
                         </div>
                     </div>
 
