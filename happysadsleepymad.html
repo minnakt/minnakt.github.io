@@ -33,7 +33,7 @@
                         <div class = "date"> May 2019 | Data Analysis and Data Viz</div> 
                         <div class = "summary"> 
                             if you've been on my page for a little while you might have noticed that 
-                            I really like emojis. Emojis are a modern construct of communication that 
+                            I really like emojis. Emojis have become a staple of modern conversation that 
                             transcends languages, as they are used all over the world.
                         </div>
                         <div class = "summary"> 
@@ -60,8 +60,8 @@
                         <div class = "summary">
                             Data collection was probably the most important part of the project, because it forms
                             the foundation for everything that follows. Though we originally were planning on scraping
-                            from multiple places such as Facebook, Instagram, and Twitter we quickly learned that
-                            Facebook had strict restrictions on their data policy so that rules Facebook and Instagram out.
+                            from multiple places such as Facebook, Instagram, and Twitter, we quickly learned that
+                            Facebook has strict restrictions on their data policy which ruled Facebook and Instagram out.
                         </div>
                         <div class = "summary">
                             In the end, we settled for Twitter, which, by the way, also required us to request an API key,
@@ -69,15 +69,14 @@
                             some less-than-scrupulous methods... but we had good intentions!
                         </div>
                         <div class = "summary">
-                            We scraped Twitter tweets containing emojis for one month from March to April, collecting nearly 300,000 tweets 
-                            during that time. Note that we excluded all of the flag emojis, because they didn't seem to be giving any 
-                            informative data. We then inserted our data into a SQLite DB, and it looked a little like this:
+                            We scraped Twitter for tweets containing emojis for one month from March to April, collecting nearly 300,000 tweets 
+                            during that time. We then inserted our data into a SQLite DB, and it looked a little like this:
                         </div>
                         <img src = "./images/happysadsleepymad/database.PNG" width="800px">
                         <div class = "summary">
                             As you can see, we collected information such as username, region, sentiment, and iteraction 
-                            counts. You can also see that the data is not exactly clean because not every Twitter uses 
-                            geo-tagging so... we also had to deal with that. 😅
+                            counts. You can also see that the data is not exactly clean because not every Twitter user utilizes 
+                            geo-tagging... so we also had to deal with that. 😅
                         </div>
                     </div>
 
@@ -85,9 +84,10 @@
                         <div class = "title"> Sentiment Analysis</div> 
                         <div class = "summary">
                            Working with only English-language tweets, we used TextBlob (a sentiment analysis library)
-                           and K-Means with 3 clusters to attempt to determine which emojis are positive, negative,
-                           or neutral.
+                           and K-Means with 3 clusters to determine which emojis are positive, negative,
+                           and neutral.
                         </div>
+                        <div class="summary"> Here our are results:</div>
                         <div class = "split-box">
                             <div class = "kmeans">
                                 <img src="./images/happysadsleepymad/kmeans.png" width="400" >
@@ -111,8 +111,8 @@
                             </div>
                         </div>
                         <div class = "summary">
-                            Isn't interesting how 😂 and 🤣 are considered negative emojis? Perhaps they're used
-                            in a lot of sarcastic contexts— but that's a whole 'nother data science project!
+                            Isn't it interesting how 😂 and 🤣 are considered negative emojis? Perhaps they're used
+                            in a lot of sarcastic contexts— but that's a whole different data science project!
                          </div>
 
                     </div>
@@ -120,11 +120,11 @@
                     <div class = "paragraph">
                         <div class = "title"> Context Analysis</div> 
                         <div class = "summary">
-                           We performed case studies on English, Japanese, and Spanish. These were the languages that
-                           we had the most tweet data for.
+                           We performed case studies on English, Japanese, and Spanish. Why those languages? They were simply 
+                           the languages for which we had collected the most tweet data.
                         </div>
                         <div class = "summary">
-                            Basically, we constructed sparse word vectors to discovered the words that were used in a similar
+                            Basically, we constructed sparse word vectors to discover words that were used in a similar
                             context to each emoji in 😊😢😴😤, and created radial graphs using Javascript's D3 library.
                             The distance between the words and the emoji in the center represents the similarities of contexts.
                          </div>

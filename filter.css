@@ -192,6 +192,14 @@ body {
     width: 450px;
   }
 
+  li{
+    font-family: 'Europa';
+    list-style-position: outside;
+    padding-left: 0.5em;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
   .tom-nook {
     margin: 10px auto;
   }
