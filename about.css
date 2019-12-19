@@ -195,6 +195,10 @@ li{
   background: #F6663F;
 }
 
+.designer, .illustrator {
+  margin-left: 8px;
+}
+
 .designer::after {
     content: '';
     position: relative;
@@ -254,7 +258,7 @@ li{
 
   /* LINKS */
 
-  a, a:visited, a:active {
+  .page-container a, .page-container a:visited, .page-container a:active {
     text-decoration: none;
     color: black;
 
@@ -265,14 +269,14 @@ li{
     transition: all 1s ease-out;
 }
 
-a:hover {
+.page-container a:hover {
     color: #F6663F;
     transition: opacity .55s ease-in-out;
 -moz-transition: opacity .55s ease-in-out;
 -webkit-transition: opacity .55s ease-in-out;
 }
 
-a:hover::after {
+.page-container a:hover::after {
     content: '';
     position: relative;
     bottom: -2px;
@@ -280,4 +284,22 @@ a:hover::after {
     display: block;
     height: 2px;
     background: #F6663F;
+}
+
+.name a, .name a:visited, .name a:active {
+  text-decoration: none;
+  color: black;
+
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.name a:hover {
+  color: #F6663F;
+  transition: opacity .55s ease-in-out;
+-moz-transition: opacity .55s ease-in-out;
+-webkit-transition: opacity .55s ease-in-out;
 }
