@@ -25,7 +25,7 @@ body {
     min-height: 100% ;
     background: none;
     min-width: 100%;
-    padding-bottom: 80px;
+    padding-bottom: 30px;
   }
   
   html {
@@ -47,7 +47,7 @@ body {
     top:0; */
     position: absolute;
     top:0;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 
     -moz-animation: fadein 1.2s; /* Firefox */
     -webkit-animation: fadein 1.2s; /* Safari and Chrome */
@@ -275,7 +275,7 @@ body {
 .back2top{
   font-family:'Europa';
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top: 50px;
   font-size: 13px;
 }
 
