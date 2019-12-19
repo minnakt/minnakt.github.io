@@ -331,3 +331,12 @@ body {
   color: #F6663F;
   font-family: 'Europa-Bold';
 }
+
+.kmeans img{
+  flex-shrink: 0;
+}
+
+.summary-box {
+  flex-shrink:0;
+  width: 400px;
+}
